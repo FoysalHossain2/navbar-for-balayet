@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    body{
+        height: 1600px;
+    }
+
+    .counter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+.counter-box {
+  background: #efa88a;
+  padding: 50px 30px;
+  min-width: 220px;
+  text-align: center;
+}
+.counter-text {
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: 'Poppins', serif;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.counter-number {
+  color: #21706d;
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+@media (max-width: 600px) {
+  .counter-box {
+    padding: 20px 8px;
+    min-width: 140px;
+  }
+  .counter-text {
+    font-size: 1.1rem;
+  }
+  .counter-number {
+    font-size: 1.4rem;
+  }
+}
+
+  </style>
+
+</head>
+<body>
+  
+  <div class="counter-section">
+    <div class="counter-box">
+      <div class="counter-text">
+        Trusted by more<br>
+        than <span class="counter-number">0</span> patients
+      </div>
+    </div>
+  </div>
+<script>
+  // Counter animation function
+  function animateCounter(el, to, duration = 3000) {
+    let start = 0;
+    const step = Math.ceil(to / (duration / 16));
+    function update() {
+      start += step;
+      if (start >= to) {
+        el.textContent = to;
+      } else {
+        el.textContent = start;
+        requestAnimationFrame(update);
+      }
+    }
+    update();
+  }
+
+  // Page লোড হলে observer সেট করা হবে
+  document.addEventListener('DOMContentLoaded', () => {
+    const counterSection = document.querySelector('.counter-section');
+    const counter = document.querySelector('.counter-number');
+    let animated = false; // একবারই অ্যানিমেশন হবে
+
+    // observer তৈরি করছি
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animateCounter(counter, 5170, 1800);
+          animated = true; // যেন বারবার না চলে
+          observer.unobserve(counterSection); // একবার দেখেই বন্ধ
+        }
+      });
+    }, {
+      threshold: 0.5 // কমপক্ষে ৫০% দেখা গেলেই অ্যানিমেশন হবে
+    });
+
+    // observe শুরু করো
+    if (counterSection) {
+      observer.observe(counterSection);
+    }
+  });
+</script>
+
+
+</body>
+</html>
