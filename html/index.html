@@ -15,29 +15,38 @@
       height: 1500px;
     }
 
+    .container {
+        max-width: 1440px; 
+        width: 100%;       
+        margin: 0 auto;   
+
+    }
+
     .backgrundDiv {
-      background-color: #000000;
-      height: 171px;
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
+        background-color: #000000;
+        height: 151px;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
     }
 
     .rightsidebar {
-      width: 80%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
 
+      /*------------------------- topbar style ----------------------  */
 
+      /*
     .header-container {
       width: 80%;
       height: 50px;
-      margin-left: auto; /* pushes it to the right */
+      margin-left: auto; 
       margin-right: 0;
     }
 
@@ -48,7 +57,6 @@
 
     .top-bar {
         display: flex;
-        /* background: linear-gradient(to bottom, #111, #222); */
         color: #ccc;
         overflow: hidden;
         padding-left: 10px;
@@ -101,26 +109,95 @@
       color: #fff;
     }
 
-    @media (max-width: 768px) {
-      .header-container {
-        width: 95%;
-      }
 
-      .top-bar {
-        flex-wrap: wrap;
-      }
 
-      .top-bar .item {
-        min-width: 100%;
-        justify-content: center;
-      }
 
-      .top-bar .social {
-        justify-content: center;
-        width: 100%;
-        margin-top: 5px;
-      }
+    .phoneWrapper:hover .phoneNmber {
+      color: #32cd32;
+      cursor: pointer;
     }
+
+    .social-icons a {
+    color: #fff; 
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #32cd32; 
+  }
+*/
+
+
+    .header-container {
+      width: 100%;
+      max-width: 1607px;
+      margin-left: auto;
+      margin-right: 0;
+      /*padding: 0 0px;*/
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center; /* এখন সব item মাঝখানে থাকবে */
+      color: #ccc;
+      overflow: hidden;
+      height: auto;
+      position: relative;
+      padding-left: 39px;
+      padding-right: -20px;
+    }
+
+    .top-bar .item {
+      display: flex;
+      align-items: center;
+       justify-content: center;
+      padding: 10px 30px;
+      transform: perspective(1px) skewX(-30deg);
+      background: linear-gradient(to bottom, #050606 0, #23282c 100%);
+      margin: 1px;
+      min-width: 18px;
+      cursor: pointer;
+      flex: 1 1 auto;
+    }
+
+    .top-bar .item > div {
+      transform: skewX(30deg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .top-bar .item i {
+      color: #aaa;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 18px;
+      margin: 0 5px;
+      transition: color 0.3s ease;
+    }
+
+    
+    .phoneWrapper:hover .phoneNmber {
+      color: #32cd32;
+      cursor: pointer;
+    }
+
+    .top-bar .item i:hover {
+    color: #32cd32;
+}
+    
+
 
     /*========== nav-container ============== */
 
@@ -133,20 +210,23 @@
         align-items: stretch;
     }
 
+/* Desktop default */
     .nav-item {
-        transform: perspective(1px) skewX(-30deg);
-        background: linear-gradient(to bottom, #050606 0, #23282c 100%);
-        padding: 20px 69px;
-        color: #ccc;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-right: 1px solid #111;
-        min-width: 100px;
-        height: 74px;
-        /* column-gap: 10px; */
-        cursor: pointer;
+      padding: 20px 66px;
+      /* max-width: 37px; */
+      height: 74px;
+      transform: perspective(1px) skewX(-30deg);
+      background: linear-gradient(to bottom, #050606 0, #23282c 100%);
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 3px solid #111;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
+
+
 
    .nav-item .inner {
     transform: skewX(30deg);
@@ -176,6 +256,11 @@
     padding: 0;
     margin: 0;
     line-height: 30px;
+    transition: all 0.3s ease;
+    }
+    
+    .navmenu:hover {
+      color: #32cd32;
     }
 
     .nav-item:hover {
@@ -201,43 +286,27 @@
     .cta-box span:first-child {
       color: limegreen;
       display: block;
-      font-size: 20px;
+      font-size: 17px;
       margin-bottom: 5px;
     }
 
     .cta-box span:last-child {
-      font-size: 36px;
+      font-size: 30px;
       color: #fff;
     }
-@media (max-width: 768px) {
-      .nav-container {
-        flex-wrap: wrap;
-      }
 
-      .nav-item, .cta-box {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        height: auto;
-        padding: 15px;
-      }
-
-      .cta-box span:last-child {
-        font-size: 22px;
-      }
-    }
 
 
 
   /*========== logo section =============== */
 
 .logo-container {
-    width: 15%;
+    width: 13%;
     transform: perspective(1px) skewX(-30deg);
     background: linear-gradient(to bottom, #050606 0%, #23282c 100%);
     color: white;
     padding: 30px 40px;
-    height: 61%;
+    height: 57%;
     display: flex;
     align-items: center;
 }
@@ -264,7 +333,7 @@
 
     .logo-image {
       /* width: 60px; */
-      height: 100px;
+      height: 140px;
     }
 
     .logo-text {
@@ -288,27 +357,6 @@
       letter-spacing: 1px;
     }
 
-    @media (max-width: 600px) {
-      .logo-container {
-        padding: 20px;
-        height: auto;
-        justify-content: center;
-      }
-
-      .logo-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .logo-text h1 {
-        font-size: 24px;
-      }
-
-      .logo-image {
-        width: 50px;
-        height: 50px;
-      }
-    }
 
 
     /* ========== right side bar ===== */
@@ -326,17 +374,226 @@
     .header-container {
       transition: all 0.4s ease;
     }
+
+
+
+    /*---------------------- responsive design  ----------------------*/
+/*============= Responsive fix: Desktop screens 1024px+ =============*/
+
+/* ✅ ছোট স্ক্রিন: 1024px এর নিচে */
+@media (max-width: 1023px) {
+  .logo-container {
+    width: 13%;
+    padding: 27px 20px;
+    height: 80px;
+  }
+
+  .logo-image {
+    height: 75px;
+  }
+
+  .cta-box span:last-child {
+    font-size: 20px;
+  }
+
+     .nav-item {
+        padding: 46px 18px;
+        height: auto;
+    }
+
+    .navmenu {
+      font-size: 15px;
+      font-family: UniversCondensed,sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      line-height: 30px;
+    }
+
+
+    .backgrundDiv {
+      background-color: #000000;
+      height: 149px;
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+  }
+
+  .cta-box {
+    color: #fff;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: right;
+    height: 82px;
+    margin-left: auto;
+    margin-top: 17px;
+    bottom: 0;
+}
+
+
+}
+
+/* ✅ বড় স্ক্রিন: 1024px এবং তার উপরে */
+@media (min-width: 1024px) {
+    .logo-container {
+        width: 15%;
+        padding: 12px 12px;
+        height: 120px;
+    }
+
+  .logo-image {
+    height: 120px;
+  }
+
+    .cta-box span:last-child {
+        font-size: 19px;
+    }
+
+  .nav-item {
+      padding: 10px 15px;
+      height: 80px;
+  }
+
+  .backgrundDiv {
+    height: 151px;
+  }
+
+    .cta-box {
+    padding: 0 20px;
+  }
+
+    .phoneWrapper img {
+    width: 27px;
+    height: 27px;
+  }
+
+    body.scrolled .cta-box {
+      color: #fff;
+      padding: 0 20px;
+  }
+
+  body.scrolled .nav-item {
+      padding: 10px 15px;
+      height: 77px;
+      margin-left: 5px;
+  }
+
+}
+
+
+@media (max-width: 1440px){
+.nav-item {
+    padding: 10px 37px;
+    height: 80px;
+}
+
+  .logo-container {
+    width: 15%;
+    padding: 11px 12px;
+    height: 120px;
+}
+
+  body.scrolled .nav-item {
+    padding: 10px 40px;
+    height: 77px;
+    margin-left: 5px;
+  }
+
+  .phoneWrapper img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cta-box span:last-child {
+    font-size: 34px;
+}
+
+}
+
+
+@media (min-width: 1441px){
+  .nav-item {
+      padding: 10px 71px;
+      height: 80px;
+  }
+
+  .logo-container {
+      width: 15%;
+      padding: 11px 21px;
+      height: 120px;
+  }
+
+body.scrolled .nav-item {
+    padding: 10px 66px;
+    height: 77px;
+    margin-left: 5px;
+}
+
+  .phoneWrapper img {
+    width: 30px;
+    height: 30px;
+  }
+
+    .logo-image {
+      height: 156px;
+  }
+
+  .cta-box span:last-child {
+      font-size: 32px;
+  }
+
+  /*--------- scroll tiger css --------  */
+  body.scrolled .cta-box {
+    color: #fff;
+    padding: 0 45px;
+  }
+
+  body.scrolled .cta-box span:last-child {
+    font-size: 32px;
+  }
+
+}
+
+
+
+
+
+    @media (max-width: 600px) {
+
+      .logo-image {
+          height: 85px;
+          width: 91px;
+          margin-top: 0px;
+      }
+    }
+
+
+
+
+
+
+
     
 
-    /* When scrolled */
-    .scrolled .logo-container {
-      width: 10%;
-      height: 73px;
-      padding: 10px 20px;
+    /*========================== When scrolled================ */
+      .scrolled .logo-container {
+        width: 10%;
+        height: 73px;
+        padding: 10px 48px;
     }
 
     .scrolled .logo-image {
-      height: 50px;
+      height: 99px;
     }
 
     .scrolled .logo-text h1 {
@@ -350,7 +607,8 @@
 
     .scrolled .nav-item {
         padding: 10px 73px;
-        height: 70px;
+        height: 77px;
+        margin-left: 5px;
     }
 
     .scrolled .nav-item .inner i {
@@ -376,9 +634,163 @@
     }
 
     .scrolled .cta-box {
-      color: #fff;
-      padding: 0 0px;
+        color: #fff;
+        padding: 0 57px;
     }
+
+
+
+
+    /* ================ mobile device menu bar style css============== */
+
+     .hamburger,
+    .menu {
+      display: none;
+    }
+
+
+    /* Hamburger Button */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      right: 20px; /* ✅ ডান পাশে */
+      font-size: 24px;
+      color: #fff;
+      background-color: #222;
+      padding: 10px;
+      z-index: 1001;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Side Menu */
+    .menu {
+      position: fixed;
+      top: 0;
+      right: -100%; /* ✅ শুরুতে বাইরে */
+      width: 350px;
+      height: 100vh;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      overflow-y: auto;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .menu.active {
+      right: 0;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 60px;
+    }
+
+    .menu .mobile-nav-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 18px;
+      width: 100%;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .menu .mobile-nav-item i {
+      margin-right: 10px;
+    }
+
+    .scrap-prices {
+      margin-top: 20px;
+      color: #7DBF3C;
+      font-size: 16px;
+    }
+
+    .start-recycling {
+      margin-top: 30px;
+      color: #7DBF3C;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: auto;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #7DBF3C;
+      text-decoration: none;
+    }
+
+    .footer .location {
+      margin-top: 10px;
+    }
+    
+      @media (max-width: 991px) {
+    .hamburger {
+      display: block;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .logo-container {
+      display: none;
+    }
+      .rightsidebar {
+        display: none;
+      }
+
+      /* -----------logo------ */
+       .logo-container {
+        width: 13%;
+        transform: perspective(1px) skewX(-30deg);
+        background: none;
+        color: white;
+        padding: 30px 40px;
+        height: 57%;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-image {
+        height: 85px;
+        width: 91px;
+        margin-top: -21px;
+    }
+    .backgrundDiv {
+      height: 94px;
+
+    }
+  }
+
+    /* ================ mobile device menu bar style css============== */
 
   </style>
 
@@ -386,36 +798,48 @@
 </head>
 <body>
 
+  <!--=============== desktop device  ================-->
+  <div class="container">
+
     <div class="backgrundDiv">
 
       <div class="logo-container">
-        <div class="logo-inner">
-          <img src="https://images.squarespace-cdn.com/content/v1/632cda26d023111dc7e7211f/144c93f9-ded9-4b8e-9dac-43d3d83b8f36/Copy+of+CMT%2BLogo%2B2.png?format=1500w" alt="Logo" class="logo-image" />
-          <div class="logo-text">
-            <h1>CITY METAL TRADERS</h1>
-            <!-- <span>METAL & E-WASTE RECYCLING</span> -->
+          <div class="logo-inner">
+            <img src="https://static1.squarespace.com/static/632cda26d023111dc7e7211f/t/68852d9271e5a9025be5d55a/1753558418551/1.png" alt="Logo" class="logo-image" />
+            <div class="logo-text">
+              <!-- <h1>CITY METAL TRADERS</h1> -->
+            </div>
           </div>
         </div>
-        </div>
+        
       <div class="rightsidebar">
     
           <div class="header-container">
             <div class="top-bar">
               <div class="item">
-                <div><i class="fas fa-map-marker-alt"></i> West Babylon Location</div>
+                <div><i class="fas fa-map-marker-alt"></i>49-29 31st St</div>
               </div>
               <div class="item">
-                <div><i class="fas fa-map-marker-alt"></i> Holbrook Location</div>
+                <div><i class="fas fa-map-marker-alt"></i> Long Island City</div>
               </div>
               <div class="item">
-                <div><i class="fas fa-clock"></i> Hours of Operation</div>
+                <div><i class="fas fa-clock"></i> NY 11101</div>
               </div>
               <div class="item">
-                <div> 
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
+                <div class="social-icons">
+                  <a href="https://www.instagram.com/citymetaltraders/?hl=en">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.instagram.com/citymetaltraders/?hl=en">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.facebook.com/p/City-Metal-Traders-100057203179799/">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCEZYYnrMnFN2uSGG_5hjWUQ">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
               </div>
               <!-- <div class="social">
               
@@ -423,87 +847,147 @@
             </div>
           </div>
     
+
+
           <div class="nav-container">
             <div class="nav-item">
               <div class="inner">
-                <i class="fas fa-home" style="font-size: 30px;"></i>
-                <h5 class="navmenu">HOME</h5>
+                <a href="https://vuvuzela-magenta-fypn.squarespace.com/">
+                  <h5 class="navmenu">HOME</h5>
+                </a>
               </div>
             </div>
             <div class="nav-item">
               <div class="inner">
-                <i class="fas fa-cogs" style="font-size: 30px;"></i>
-
+                <h5 class="navmenu"> What We Buy</h5>
+              </div>
+            </div>
+            <div class="nav-item">
+              <div class="inner">
                 <h5 class="navmenu">SERVICES</h5>
               </div>
             </div>
             <div class="nav-item">
               <div class="inner">
-                
-                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" height="30" width="30" xml:space="preserve" viewBox="0 0 518.17328 441.98557" y="0px" x="0px" id="Layer_1" version="1.1"><metadata id="metadata11"><rdf:rdf><cc:work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type><dc:title></dc:title></cc:work></rdf:rdf></metadata><defs id="defs9"></defs>
-                  <style id="style2" type="text/css">
-                    .st0{fill:none;stroke:#878787;stroke-width:29.4655;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-                  </style>
-                  <polyline transform="translate(-76.428361,-28.058667)" style="fill:none;stroke:#878787;stroke-width:29.46549988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" id="polyline4" points="385.52,455.31 579.87,455.31 335.51,42.79 91.16,455.31 297.98,455.31 335.85,391.64 336.04,391.97   362.96,346.7 363.28,346.9 363.42,346.67 420.69,346.67 335.28,208.61 252.85,346.67 297.02,346.67 " class="st0"></polyline>
-                  </svg>
-
                 <h5 class="navmenu">ABOUT</h5>
               </div>
             </div>
             <div class="nav-item">
               <div class="inner">
-                <i class="fas fa-calendar-alt" style="font-size: 30px;"></i>
-                <h5 class="navmenu">NEWS/EVENTS</h5>
+                <h5 class="navmenu">BLOG</h5>
               </div>
             </div>
             <div class="nav-item">
               <div class="inner">
-                <i class="fas fa-mobile-alt" style="font-size: 30px;"></i>
-                <h5 class="navmenu">CONTACT</h5>
+                <h5 class="navmenu">CONTACT US</h5>
               </div>
             </div>
+
             <div class="cta-box">
               <div class="numbercontent">
-                <span>42-29 31st St, LIC, NY 11101</span>
-                <span>212-777-4100</span>
+                <span>Schedule Pick-Up</span>
+                  <a href="tel:2127774100" class="call-link" style="text-decoration: none;">
+                    <span class="phoneWrapper">
+                      <img src="https://i.ibb.co/nNZDYx14/phone-call-10.png" alt="phoneicon" width="34" height="34">
+                      <span class="phoneNmber">212-777-4100</span>
+                    </span>
+                  </a>
+
               </div>
             </div>
           </div>
     
       </div>
     </div>
+  </div>
+  <!--=============== desktop device  ================-->
 
 
-
-  <script>
-      window.addEventListener('scroll', () => {
-        const body = document.body;
-        if (window.scrollY > 100) {
-          body.classList.add('scrolled');
-        } else {
-          body.classList.remove('scrolled');
-        }
-      });
-  </script>
-
-
-</body>
-</html>
+  <!--=============== mobiole device  ================-->
+    <!-- Hamburger Button -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
   </div>
 
+  <!-- Black overlay -->
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+  <!-- Side Menu -->
+  <div class="mobile menu">
+      <div class="logo-inner">
+        <img src="https://static1.squarespace.com/static/632cda26d023111dc7e7211f/t/68852d9271e5a9025be5d55a/1753558418551/1.png" alt="Logo" class="logo-image" />
+        <div class="logo-text">
+          <!-- <h1>CITY METAL TRADERS</h1> -->
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+      <div class="menu" id="sideMenu">
+        <div class="menu-container">
+          <a href="#" class="mobile-nav-item">HOME</a>
+          <a href="#" class="mobile-nav-item">WHAT WE BUY</a>
+          <a href="#" class="mobile-nav-item">SERVICES</a>
+          <a href="#" class="mobile-nav-item">ABOUT</a>
+          <a href="#" class="mobile-nav-item">BLOG</a>
+          <a href="#" class="mobile-nav-item">CONTACT US</a>
+        </div>
+
+        <div class="scrap-prices">
+          SCRAP PRICES <br> Last Updated: 7/26/25
+        </div>
+
+        <div class="start-recycling">
+          Schedule Pick-Up phoneicon <br>  212-777-4100
+        </div>
+
+        <div class="footer">
+          <div class="location">
+            <a href="#">West Babylon Location</a>
+          </div>
+          <div class="location">
+            <a href="#">Holbrook Location</a>
+          </div>
+          <div class="location">
+            <a href="#">Hours of Operation</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!--=============== mobiole device  ================-->
 
 
   <script>
-      window.addEventListener('scroll', () => {
-        const body = document.body;
-        if (window.scrollY > 100) {
-          body.classList.add('scrolled');
+      function handleScroll() {
+        if (window.innerWidth > 991) {
+          if (window.scrollY > 100) {
+            document.body.classList.add('scrolled');
+          } else {
+            document.body.classList.remove('scrolled');
+          }
         } else {
-          body.classList.remove('scrolled');
+          document.body.classList.remove('scrolled'); // optional: reset on small screen
         }
-      });
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleScroll); // if screen resizes after scroll
+
+
+
+    // <!-- monbile device  -->
+
+      function toggleMenu() {
+        document.getElementById('sideMenu').classList.toggle('active');
+        document.getElementById('overlay').classList.toggle('active');
+      }
   </script>
 
 
 </body>
 </html>
+
+
+
